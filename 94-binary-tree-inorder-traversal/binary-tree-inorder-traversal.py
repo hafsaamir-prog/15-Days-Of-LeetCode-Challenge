@@ -1,13 +1,20 @@
 class Solution:
     def inorderTraversal(self, root):
+        stack = []
         result = []
+        current = root
 
-        def inorder(node):
-            if not node:
-                return
-            inorder(node.left)
-            result.append(node.val)
-            inorder(node.right)
+        while current or stack:
+            # Go to the leftmost node
+            while current:
+                stack.append(current)
+                current = current.left
 
-        inorder(root)
+            # Visit the node
+            current = stack.pop()
+            result.append(current.val)
+
+            # Go to the right subtree
+            current = current.right
+
         return result
