@@ -10,8 +10,6 @@ class Solution:
 
         return max_sum
 
-
-# Optional test block (safe for Python 2)
 if __name__ == "__main__":
     s = Solution()
 
